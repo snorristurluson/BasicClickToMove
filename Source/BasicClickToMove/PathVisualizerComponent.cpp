@@ -23,6 +23,11 @@ void UPathVisualizerComponent::SetupSpline(const TArray<FVector>& Waypoints)
 
 void UPathVisualizerComponent::SetupMesh()
 {
+	if (!Mesh)
+	{
+		return;
+	}
+	
 	Mesh->ClearInstances();
 	float Length = Path->GetSplineLength();
 
